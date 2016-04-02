@@ -24,6 +24,12 @@ print(evens)
 
 
 // use inline closure instead of separate func isEven.
+// Swift infers closure parameter "number" type is Int, closure return type is [Int]
 // why does output say 11 times instead of 10?
 evens = Array(1...10).filter {(number) in number % 2 == 0}
+print(evens)
+
+// use shorthand argument notation $0
+// return elements that satisfy conditional
+evens = Array(1...10).filter {$0 % 2 == 0}
 print(evens)
