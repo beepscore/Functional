@@ -17,7 +17,9 @@ func isEven(number: Int) -> Bool {
    return number % 2 == 0
 }
 
-// filter argument is boolean function isEven
+// filter is a "higher order function", it takes a function as an argument.
+// https://en.wikipedia.org/wiki/Higher-order_function
+// pass Bool function function isEven
 // tutorial says "functions are just named closures"
 evens = Array(1...10).filter(isEven)
 print(evens)
