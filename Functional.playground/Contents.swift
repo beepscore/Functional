@@ -21,3 +21,9 @@ func isEven(number: Int) -> Bool {
 // tutorial says "functions are just named closures"
 evens = Array(1...10).filter(isEven)
 print(evens)
+
+
+// use inline closure instead of separate func isEven.
+// why does output say 11 times instead of 10?
+evens = Array(1...10).filter {(number) in number % 2 == 0}
+print(evens)
