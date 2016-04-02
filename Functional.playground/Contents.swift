@@ -2,4 +2,12 @@
 
 import UIKit
 
-var str = "Hello, playground"
+var evens = [Int]()
+
+// imperative style
+for i in 1...10 {
+    if i % 2 == 0 {
+        evens.append(i)
+    }
+}
+print(evens)
