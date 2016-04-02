@@ -35,3 +35,29 @@ print(evens)
 // return elements that satisfy conditional
 evens = Array(1...10).filter {$0 % 2 == 0}
 print(evens)
+
+/**
+ As a learning exercise, implement a method similar to the built in filter.
+ This is similar to previous function definition isEven, but is more general.
+ myFilter has a parameter to pass in a predicate function such as isEven
+ - parameter source: is an array of generic type T
+ - parameter predicate: function that takes argument of generic type T and returns Bool
+ - returns: array of generic type T with elements selected from source by the predicate
+ */
+func myFilter<T>(source: [T], predicate:(T) -> Bool) -> [T] {
+    var result = [T]()
+    for i in source {
+        if predicate(i) {
+            result.append(i)
+        }
+    }
+    return result
+}
+
+// Call myFilter with named function isEven
+evens = myFilter(Array(1...10), predicate: {x in isEven(x)})
+print(evens)
+
+// Call myFilter with inline closure and shorthand notation instead of separate func isEven.
+evens = myFilter(Array(1...10)) {$0 % 2 == 0}
+print(evens)
