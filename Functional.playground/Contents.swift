@@ -73,13 +73,10 @@ print(evens)
 extension Array {
 
     /**
+     This is an instance method so don't declare as static.
      As a learning exercise, implement a method similar to the built in filter.
-     This is similar to previous function definition isEven, but is more general.
-     beepFilter has a parameter to pass in a predicate function such as isEven.
-     Declare static to make this a type method, not an instance method.
-     - parameter source: is an array of generic type T
-     - parameter predicate: function that takes argument of generic type T and returns Bool
-     - returns: array of generic type T with elements selected from source by the predicate
+     - parameter predicate: function that takes argument of generic type Element and returns Bool
+     - returns: array of generic type Element with elements selected from source by the predicate
      */
     func beepFilter(predicate:(Element) -> Bool) -> [Element] {
         var result = [Element]()
