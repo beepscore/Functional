@@ -93,5 +93,3 @@ extension Array {
 evens = Array(1...10).beepFilter({x in isEven(x)})
 print(evens)
 
-
-// MARK: Reduce
