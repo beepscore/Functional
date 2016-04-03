@@ -2,6 +2,8 @@
 
 import UIKit
 
+// MARK: Filter
+
 var evens = [Int]()
 
 // imperative style
@@ -61,3 +63,38 @@ print(evens)
 // Call myFilter with inline closure and shorthand notation instead of separate func isEven.
 evens = myFilter(Array(1...10)) {$0 % 2 == 0}
 print(evens)
+
+/**
+ Tutorial challenge- add a custom filter method to Array.
+ Use a class extension, similar to Objective C category.
+ https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html
+ hint: You can extend Array, but not Array<T>.
+ */
+extension Array {
+
+    /**
+     As a learning exercise, implement a method similar to the built in filter.
+     This is similar to previous function definition isEven, but is more general.
+     beepFilter has a parameter to pass in a predicate function such as isEven.
+     Declare static to make this a type method, not an instance method.
+     - parameter source: is an array of generic type T
+     - parameter predicate: function that takes argument of generic type T and returns Bool
+     - returns: array of generic type T with elements selected from source by the predicate
+     */
+    func beepFilter(predicate:(Element) -> Bool) -> [Element] {
+        var result = [Element]()
+        for i in self {
+            if predicate(i) {
+                result.append(i)
+            }
+        }
+        return result
+    }
+    
+}
+
+evens = Array(1...10).beepFilter({x in isEven(x)})
+print(evens)
+
+
+// MARK: Reduce
