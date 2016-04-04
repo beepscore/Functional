@@ -42,3 +42,28 @@ print(maxNumber)
 let digits = ["3", "1", "4", "1"]
 let numberFromDigits = digits.reduce(0) {(result, digitString) in (10 * result) + Int(digitString)!}
 print(numberFromDigits)
+
+extension Array {
+    /**
+     As a learning exercise, implement myReduce similar to built in reduce.
+     Iterate over array, call combiner on each element.
+     - parameter combiner: function returns value of type U
+     - returns: result from combiner after last iteration
+     */
+    func myReduce<T, U>(seed:U, combiner:(U, T) -> U) -> U {
+        var current = seed
+        for item in self {
+           current = combiner(current, item as! T)
+        }
+        return current
+    }
+}
+
+// Check myReduce gives same result as built in reduce
+let evenSumMyReduce = Array(1...10)
+    .filter {(number) in number % 2 == 0}
+    .myReduce(0) {(total, number) in total + number}
+print(evenSumMyReduce)
+
+let numberFromDigitsMyReduce = digits.myReduce(0) {(result, digitString) in (10 * result) + Int(digitString)!}
+print(numberFromDigitsMyReduce)
