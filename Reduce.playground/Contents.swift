@@ -37,3 +37,8 @@ print(maxNumber)
 let numbers = Array(1...10)
     .reduce("numbers: ") {(total, number) in total + "\(number) "}
 print(maxNumber)
+
+// Challenge: use reduce to convert array of digits into an integer
+let digits = ["3", "1", "4", "1"]
+let numberFromDigits = digits.reduce(0) {(result, digitString) in (10 * result) + Int(digitString)!}
+print(numberFromDigits)
