@@ -13,7 +13,7 @@ https://www.raywenderlich.com/82599/swift-functional-programming-tutorial
 # Results
 
 ## Common functional methods
-Some are filter, map, reduce.
+Some are filter, map, reduce (aka fold).
 
 ## Map
 map applies a function to each element in a collection.
