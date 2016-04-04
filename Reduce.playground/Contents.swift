@@ -26,3 +26,8 @@ evenSum = Array(1...10)
     .reduce(0) {(total, number) in total + number}
 
 print(evenSum)
+
+let maxNumber = Array(1...10)
+.reduce(0) {(combinedMax, number) in max(combinedMax, number)}
+print(maxNumber)
+
