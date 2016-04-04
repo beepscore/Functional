@@ -27,7 +27,13 @@ evenSum = Array(1...10)
 
 print(evenSum)
 
+// return the maximum value in an array
 let maxNumber = Array(1...10)
 .reduce(0) {(combinedMax, number) in max(combinedMax, number)}
 print(maxNumber)
 
+
+// return a string from an array of Int
+let numbers = Array(1...10)
+    .reduce("numbers: ") {(total, number) in total + "\(number) "}
+print(maxNumber)
